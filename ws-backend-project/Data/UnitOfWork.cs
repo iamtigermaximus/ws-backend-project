@@ -14,6 +14,8 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     public IUserService Users { get; private set; }
     public IProductService Products { get; private set; }
     public ICategoryService Categories { get; private set; }
+    public ICartService Carts { get; private set; }
+    public ICartItemService CartItems { get; private set; }
 
 
     public UnitOfWork(DataContext context, ILoggerFactory loggerFactory)
@@ -24,7 +26,8 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         Users = new UserService(_context, _logger);
         Products = new ProductService(_context, _logger);
         Categories = new CategoryService(_context, _logger);
-
+        Carts = new CartService(_context, _logger);
+        CartItems = new CartItemService(_context, _logger);
     }
 
     public IUserService User => throw new NotImplementedException();
@@ -32,6 +35,10 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     public IProductService Product => throw new NotImplementedException();
 
     public ICategoryService Category => throw new NotImplementedException();
+
+    public ICartService Cart => throw new NotImplementedException();
+
+    public ICartItemService CartItem => throw new NotImplementedException();
 
 
     public async Task CompleteAsync()

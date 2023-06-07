@@ -10,6 +10,8 @@ public interface IUnitOfWork
     IUserService Users { get; }
     IProductService Products { get; }
     ICategoryService Categories { get; }
+    ICartService Carts { get; }
+    ICartItemService CartItems { get; }
 
     Task CompleteAsync();
 }
