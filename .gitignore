@@ -1,11 +1,11 @@
 ### Ignore unnecessary files in backend
 
 # User-specific files
-appsettings.json
-appsettings.*.json
-obj
-bin
-Migrations
+ws-backend-project/appsettings.json
+ws-backend-project/appsettings.*.json
+ws-backend-project/obj
+ws-backend-project/bin
+ws-backend-project/Migrations
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
