@@ -64,32 +64,6 @@ artifacts/
 *.nuget.targets
 
 
-### Ignore unnecessary files in frontend
-
-# dependencies
-frontend/node_modules
-frontend/.pnp
-.pnp.js
-# testing
-frontend/coverage
-
-# production
-frontend/build
-
-# env files
-frontend/.env
-frontend/.DS_Store
-frontend/.env.local
-frontend/.env.development.local
-frontend/.env.test.local
-frontend/.env.production.local
-
-frontend/npm-debug.log*
-frontend/yarn-debug.log*
-frontend/yarn-error.log*
-frontend/yarn.lock
-frontend/package-*.json
-
 # VS Code files for those working on multiple tools
 .vscode/*
 !.vscode/settings.json
