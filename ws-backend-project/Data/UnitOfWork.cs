@@ -12,6 +12,9 @@ public class UnitOfWork : IUnitOfWork, IDisposable
     private readonly DataContext _context;
 
     public IUserService Users { get; private set; }
+    public IProductService Products { get; private set; }
+    public ICategoryService Categories { get; private set; }
+
 
     public UnitOfWork(DataContext context, ILoggerFactory loggerFactory)
     {
@@ -19,9 +22,17 @@ public class UnitOfWork : IUnitOfWork, IDisposable
         var _logger = loggerFactory.CreateLogger("logs");
 
         Users = new UserService(_context, _logger);
+        Products = new ProductService(_context, _logger);
+        Categories = new CategoryService(_context, _logger);
+
     }
 
     public IUserService User => throw new NotImplementedException();
+
+    public IProductService Product => throw new NotImplementedException();
+
+    public ICategoryService Category => throw new NotImplementedException();
+
 
     public async Task CompleteAsync()
     {

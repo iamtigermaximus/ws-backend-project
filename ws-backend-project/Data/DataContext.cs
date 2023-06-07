@@ -23,4 +23,8 @@ public class DataContext: DbContext
     }
 
     public DbSet<User> Users => Set<User>();
+    public DbSet<Product> Products => Set<Product>();
+    public DbSet<Category> Categories => Set<Category>();
+
+
 }

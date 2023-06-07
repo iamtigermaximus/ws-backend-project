@@ -33,11 +33,11 @@ public class UserController : ControllerBase
     [HttpGet("GetById")]
     public async Task<IActionResult> Get(int id)
     {
-        var driver = await _unitOfWork.Users.GetById(id);
+        var user = await _unitOfWork.Users.GetById(id);
 
-        if (driver == null) return NotFound();
+        if (user == null) return NotFound();
 
-        return Ok(driver);
+        return Ok(user);
     }
 
 
@@ -55,13 +55,13 @@ public class UserController : ControllerBase
     [HttpDelete("DeleteUser")]
     public async Task<IActionResult> RemoveDriver(int id)
     {
-        var driver = await _unitOfWork.Users.GetById(id);
+        var user = await _unitOfWork.Users.GetById(id);
 
-        if (driver == null)
+        if (user == null)
 
             return NotFound();
 
-        await _unitOfWork.Users.Delete(driver);
+        await _unitOfWork.Users.Delete(user);
 
         await _unitOfWork.CompleteAsync();
 
@@ -73,9 +73,9 @@ public class UserController : ControllerBase
     [HttpPatch("UpdateUser")]
     public async Task<IActionResult> UpdateDriver(User user)
     {
-        var existDriver = await _unitOfWork.Users.GetById(user.Id);
+        var existUser = await _unitOfWork.Users.GetById(user.Id);
 
-        if (existDriver == null)
+        if (existUser == null)
 
             return NotFound();
 
