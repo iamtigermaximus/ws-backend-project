@@ -1,8 +1,8 @@
 ### Ignore unnecessary files in backend
 
 # User-specific files
-ws-backend-project/appsettings.json
-ws-backend-project/appsettings.*.json
+backend/ws-backend-project/appsettings.json
+backend/ws-backend-project/appsettings.*.json
 ws-backend-project/obj
 ws-backend-project/bin
 ws-backend-project/Migrations
